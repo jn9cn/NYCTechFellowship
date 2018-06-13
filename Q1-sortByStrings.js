@@ -10,16 +10,27 @@ function sortByStrings(s, t) {
         if(!hash[s[i]]) hash[s[i]]=1
         else hash[s[i]]++
     }
-    console.log(hash)
     var str = ''
     for(var j=0; j<t.length; j++) {
         if(hash[t[j]]) {
             str+=t[j].repeat(hash[t[j]])
+            hash[t[j]] = hash[t[j]]-hash[t[j]]
         }
-        console.log(str)
     }
-    return str
+    // Edge case where t doesn't include all of s's characters
+    var end = ''
+    for (var key in hash) {
+        if (hash[key] > 0) {
+            end+=key.repeat(hash[key])
+        }
+    }
+    return str+end
 }
 
-console.log(sortByStrings('weather', 'therapyw'))
-console.log(sortByStrings('good', 'odg'))
+// Time/Space Complexity:
+// O(n) time where n is the length of s, O(n) space where n is the number of unique letters in string s
+
+// Tests:
+// console.log(sortByStrings('weather', 'therapyw')) // theeraw
+// console.log(sortByStrings('good', 'odg')) // oodg
+// console.log(sortByStrings('bcaxed', 'cbad')) // cbadxe
