@@ -30,7 +30,7 @@ function sortByStrings(s, t) {
 // Time/Space Complexity:
 // O(n) time where n is the length of s, O(n) space where n is the number of unique letters in string s
 
-// Tests:
+// Test cases:
 // console.log(sortByStrings('weather', 'therapyw')) // theeraw
 // console.log(sortByStrings('good', 'odg')) // oodg
 // console.log(sortByStrings('bcaxed', 'cbad')) // cbadxe

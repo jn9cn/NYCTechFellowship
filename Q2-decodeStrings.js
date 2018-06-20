@@ -37,13 +37,13 @@ function decodeString(s) {
 // Time/Space Complexity:
 // O(n) time where n is the length of s, O(n) space where n is the number of unique charactrs in string s
 
-// Tests:
+// Test cases:
 // console.log(decodeString('2[b3[a]]')) // baaabaaa
 // console.log(decodeString('4[ab]')) // abababab
 // console.log(decodeString('10[hello]')) // hellohellohellohellohellohellohellohellohellohello
-// console.log(decodeString(3))
+// console.log(decodeString(3)) // ''
 
-// Approach:
+// Approach: Use a stack
     // instantiate a nums array, strs array, and number string
         // push empty string into strs as buffer
     // iterate through string
